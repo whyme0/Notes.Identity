@@ -4,7 +4,7 @@ using IdentityServer4.Models;
 
 namespace Notes.Identity
 {
-    public class Configuration
+    public static class Configuration
     {
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>()
