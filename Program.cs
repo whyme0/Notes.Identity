@@ -13,6 +13,9 @@ builder.Services.AddDbContext<AuthDbContext>(b =>
     b.UseMySql(connString, ServerVersion.AutoDetect(connString));
 });
 
+// Register controllers
+builder.Services.AddControllersWithViews();
+
 // Register Identity
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
@@ -60,5 +63,11 @@ app.UseRouting();
 
 // IdentityServer4 (OAuth 2.0 & OpenID Connect)
 app.UseIdentityServer();
+
+// Endpoints
+app.UseEndpoints(b =>
+{
+    b.MapDefaultControllerRoute();
+});
 
 app.Run();
