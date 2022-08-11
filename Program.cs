@@ -61,6 +61,9 @@ using (var scope = app.Services.CreateScope())
 
 app.UseRouting();
 
+// Static files
+app.UseStaticFiles();
+
 // IdentityServer4 (OAuth 2.0 & OpenID Connect)
 app.UseIdentityServer();
 
