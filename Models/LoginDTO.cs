@@ -4,9 +4,9 @@ namespace Notes.Identity.Models
 {
     public class LoginDTO
     {
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Username { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
