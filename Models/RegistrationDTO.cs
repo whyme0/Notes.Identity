@@ -4,16 +4,16 @@ namespace Notes.Identity.Models
 {
     public class RegistrationDTO
     {
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Username { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Compare("Password", ErrorMessage = "Passwords don't match")]
         public string ConfirmPassword { get; set; }
 
         public string ReturnUrl { get; set; }
